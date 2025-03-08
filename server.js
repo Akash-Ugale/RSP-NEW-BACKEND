@@ -9,11 +9,12 @@ const app = express();
 
 app.use(
   cors({
-      origin: ["https://the-recipe-haven.netlify.app"], // Allow frontend URL
-      methods: ["GET", "POST", "PUT", "DELETE"],  // Allowed methods
-      credentials: true,  // Allow cookies/auth headers
+    origin: ["https://the-recipe-haven.netlify.app", "http://localhost:5173"], // Allow both local and deployed frontend
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
   })
 );
+
 // Middleware
 app.use(express.json());
 
