@@ -7,10 +7,16 @@ import cors from "cors"
 
 const app = express();
 
-
+app.use(
+  cors({
+      origin: ["https://the-recipe-haven.netlify.app"], // Allow frontend URL
+      methods: ["GET", "POST", "PUT", "DELETE"],  // Allowed methods
+      credentials: true,  // Allow cookies/auth headers
+  })
+);
 // Middleware
 app.use(express.json());
-app.use(cors());
+
 
 
 // Routes
